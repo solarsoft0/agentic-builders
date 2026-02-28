@@ -25,7 +25,7 @@ export default function Home() {
             </h2>
           </div>
           
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-balance">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
             The future is built
           </h1>
 
@@ -57,7 +57,7 @@ export default function Home() {
       >
         <div className="max-w-4xl mx-auto space-y-12">
           <div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-12 text-balance">
+            <h2 className="text-5xl md:text-6xl font-bold mb-12">
               The Manifesto
             </h2>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
       {/* Call to Action Footer */}
       <section className="py-20 px-6 bg-background text-foreground">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Be part of what's being built
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
