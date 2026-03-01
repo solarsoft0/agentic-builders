@@ -428,15 +428,15 @@ export function JoinForm({ onSuccess }: JoinFormProps) {
           {isFieldVisible('whatBuilding') && (
             <div>
               <label htmlFor="whatBuilding" className="block text-sm font-medium mb-2">
-                What are you building on?
+                What are you building, and why now?
               </label>
               <textarea
                 id="whatBuilding"
                 name="whatBuilding"
                 value={formData.whatBuilding}
                 onChange={handleInputChange}
-                placeholder="Tell us about your current project or idea..."
-                rows={3}
+                placeholder="Share the problem, who it serves, and what stage you are in."
+                rows={4}
                 className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
               />
             </div>

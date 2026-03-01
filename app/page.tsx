@@ -245,15 +245,10 @@ export default function Home() {
           </p>
           {hasJoined ? (
             <div className="space-y-4">
-              <p className="text-lg font-semibold text-green-700">Welcome to Agentic Builders!</p>
-              <a
-                href="https://dub.sh/agenticbuilders"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium text-lg hover:opacity-80 transition-opacity"
-              >
-                Join Our Community →
-              </a>
+              <p className="text-lg font-semibold text-green-700">Submission received.</p>
+              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+                We review with care and move with intention.
+              </p>
             </div>
           ) : (
             <button
