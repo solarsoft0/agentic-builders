@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { JoinForm } from '@/components/join-form';
 
 export default function Home() {
@@ -11,10 +11,45 @@ export default function Home() {
     setHasJoined(true);
   };
 
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (elements.length === 0) {
+      return;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      elements.forEach((element) => element.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const element = entry.target as HTMLElement;
+          const delay = Number(element.dataset.revealDelay ?? '0');
+          element.style.transitionDelay = `${delay}ms`;
+          element.classList.add('is-visible');
+          observer.unobserve(element);
+        });
+      },
+      {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px',
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 right-0 z-50 p-6">
+      <nav className="fixed top-0 right-0 z-50 p-6 reveal" data-reveal data-reveal-delay="40">
         <button
           onClick={() => {
             const element = document.getElementById('manifesto');
@@ -30,32 +65,45 @@ export default function Home() {
       <section className="h-screen flex flex-col items-center justify-center px-6 py-20">
         <div className="max-w-4xl">
           <div className="mb-8">
-            <h2 className="text-sm tracking-wide mb-6 text-muted-foreground">
-              AGENTIC BUILDERS
-            </h2>
+            <div className="mb-6 inline-flex flex-col items-end text-right leading-none">
+              <span
+                className="font-poppins font-semibold md:font-bold text-[11px] md:text-xs tracking-[0.24em] uppercase text-muted-foreground reveal wordmark-reveal"
+                data-reveal
+                data-reveal-delay="90"
+              >
+                Agentic Builders
+              </span>
+              <span
+                className="mt-1 font-brand-mono text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-muted-foreground/80 reveal wordmark-reveal"
+                data-reveal
+                data-reveal-delay="160"
+              >
+                Africa
+              </span>
+            </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 reveal" data-reveal data-reveal-delay="250">
             The future is built
           </h1>
 
-          <p className="text-lg md:text-xl max-w-2xl leading-relaxed text-muted-foreground mb-12">
+          <p className="text-lg md:text-xl max-w-2xl leading-relaxed text-muted-foreground mb-12 reveal" data-reveal data-reveal-delay="350">
             By thinkers and builders who put humans first. We're gathering those who see opportunities where others see obstacles.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 reveal" data-reveal data-reveal-delay="450">
             <button
               onClick={() => {
                 const element = document.getElementById('manifesto');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-3 bg-primary text-primary-foreground font-medium hover:opacity-80 transition-opacity"
+              className="px-8 py-3 bg-primary text-primary-foreground font-medium hover:opacity-80 hover:-translate-y-0.5 transition-all duration-300"
             >
               Read the Manifesto
             </button>
             <button
               onClick={() => setShowJoinForm(true)}
-              className="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 transition-all duration-300"
             >
               Join Us
             </button>
@@ -69,7 +117,7 @@ export default function Home() {
         className="py-14 md:py-16 px-6 bg-primary text-primary-foreground"
       >
         <div className="max-w-4xl mx-auto">
-          <article className="relative mx-auto max-w-3xl rounded-sm border border-primary-foreground/25 bg-primary-foreground text-primary shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+          <article className="relative mx-auto max-w-3xl rounded-sm border border-primary-foreground/25 bg-primary-foreground text-primary shadow-[0_24px_60px_rgba(0,0,0,0.28)] reveal-soft" data-reveal data-reveal-delay="60">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.04),transparent_45%),linear-gradient(to_bottom,rgba(0,0,0,0.02),transparent_32%)]" />
             <div className="relative px-6 py-8 md:px-12 md:py-14">
               <header className="mb-8 md:mb-10">
@@ -188,7 +236,7 @@ export default function Home() {
 
       {/* Call to Action Footer */}
       <section className="py-20 px-6 bg-background text-foreground">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center reveal" data-reveal data-reveal-delay="100">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Be part of what's being built
           </h2>
@@ -240,9 +288,23 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 px-6 bg-primary text-primary-foreground text-center text-sm">
-        <p className="text-primary-foreground/70">
-          Agentic Builders - Africa © 2025
-        </p>
+        <div className="inline-flex flex-col items-end text-right leading-none">
+          <span
+            className="font-poppins font-semibold md:font-bold text-xs tracking-[0.22em] uppercase reveal wordmark-reveal"
+            data-reveal
+            data-reveal-delay="80"
+          >
+            Agentic Builders
+          </span>
+          <span
+            className="mt-1 font-brand-mono text-[10px] tracking-[0.18em] uppercase text-primary-foreground/80 reveal wordmark-reveal"
+            data-reveal
+            data-reveal-delay="180"
+          >
+            Africa
+          </span>
+        </div>
+        <p className="mt-3 text-primary-foreground/70">© 2025</p>
       </footer>
     </main>
   );
