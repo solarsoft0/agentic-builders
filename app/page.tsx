@@ -1,6 +1,16 @@
 'use client';
 
+import { useState } from 'react';
+import { JoinForm } from '@/components/join-form';
+
 export default function Home() {
+  const [showJoinForm, setShowJoinForm] = useState(false);
+  const [hasJoined, setHasJoined] = useState(false);
+
+  const handleJoinSuccess = () => {
+    setHasJoined(true);
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -43,7 +53,10 @@ export default function Home() {
             >
               Read the Manifesto
             </button>
-            <button className="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-colors">
+            <button 
+              onClick={() => setShowJoinForm(true)}
+              className="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
               Join Us
             </button>
           </div>
@@ -235,11 +248,48 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join a community of builders, thinkers, and future shapers across Africa who are putting humans first.
           </p>
-          <button className="px-10 py-4 bg-primary text-primary-foreground font-medium text-lg hover:opacity-80 transition-opacity">
-            Join the Community
-          </button>
+          {hasJoined ? (
+            <div className="space-y-4">
+              <p className="text-lg font-semibold text-green-700">Welcome to Agentic Builders!</p>
+              <a
+                href="https://dub.sh/agenticbuilders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium text-lg hover:opacity-80 transition-opacity"
+              >
+                Join Our Community →
+              </a>
+            </div>
+          ) : (
+            <button 
+              onClick={() => setShowJoinForm(true)}
+              className="px-10 py-4 bg-primary text-primary-foreground font-medium text-lg hover:opacity-80 transition-opacity"
+            >
+              Join the Community
+            </button>
+          )}
         </div>
       </section>
+
+      {/* Join Form Modal */}
+      {showJoinForm && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-background rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 flex justify-between items-center p-6 border-b border-border bg-background">
+              <h2 className="text-2xl font-bold">Join the Community</h2>
+              <button
+                onClick={() => setShowJoinForm(false)}
+                className="text-2xl font-light hover:opacity-70 transition-opacity"
+              >
+                ×
+              </button>
+            </div>
+            <div className="p-6">
+              <JoinForm onSuccess={handleJoinSuccess} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="py-12 px-6 bg-primary text-primary-foreground text-center text-sm">
