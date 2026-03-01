@@ -34,7 +34,7 @@ export default function Home() {
               AGENTIC BUILDERS
             </h2>
           </div>
-          
+
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
             The future is built
           </h1>
@@ -53,7 +53,7 @@ export default function Home() {
             >
               Read the Manifesto
             </button>
-            <button 
+            <button
               onClick={() => setShowJoinForm(true)}
               className="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
             >
@@ -229,9 +229,6 @@ export default function Home() {
                 We're gathering builders, thinkers, and future shapers.
               </p>
               <p className="text-lg">
-                Once we reach 50 members, the group officially opens.
-              </p>
-              <p className="text-lg">
                 If you've already joined, invite the people you want to help build the future with.
               </p>
             </div>
@@ -261,7 +258,7 @@ export default function Home() {
               </a>
             </div>
           ) : (
-            <button 
+            <button
               onClick={() => setShowJoinForm(true)}
               className="px-10 py-4 bg-primary text-primary-foreground font-medium text-lg hover:opacity-80 transition-opacity"
             >
