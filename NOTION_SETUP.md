@@ -56,10 +56,11 @@ For Vercel deployment:
 ## How It Works
 
 When a user submits the form:
-1. Form data is sent to `/api/join` endpoint
-2. The endpoint validates the data
-3. A new page is created in your Notion database with all the information
-4. User sees success message and gets access to the community link
+1. The form loads `/api/join/schema` to introspect the connected Notion database.
+2. The UI automatically shows only supported fields and uses Notion select/multi-select options.
+3. Form data is sent to `/api/join` endpoint.
+4. The endpoint re-introspects the schema and maps values by property type/name before creating the page.
+5. User sees success message and gets access to the community link.
 
 ## Community Link
 

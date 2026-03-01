@@ -271,8 +271,8 @@ export default function Home() {
       {/* Join Form Modal */}
       {showJoinForm && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-background rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 flex justify-between items-center p-6 border-b border-border bg-background">
+          <div className="bg-background rounded-2xl border border-border/70 shadow-xl max-w-3xl w-full h-[90vh] max-h-[820px] flex flex-col overflow-hidden">
+            <div className="flex justify-between items-center p-5 md:p-6 border-b border-border bg-background shrink-0">
               <h2 className="text-2xl font-bold">Join the Community</h2>
               <button
                 onClick={() => setShowJoinForm(false)}
@@ -281,7 +281,7 @@ export default function Home() {
                 ×
               </button>
             </div>
-            <div className="p-6">
+            <div className="p-4 md:p-6 flex-1 overflow-hidden">
               <JoinForm onSuccess={handleJoinSuccess} />
             </div>
           </div>
