@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Agentic Builders - Africa',
-  description: 'Building human-centered AI systems across Africa. Thinkers and builders shaping the future.',
+  description: 'Where Intelligence Acts.',
   generator: 'v0.app',
   icons: {
     icon: [
