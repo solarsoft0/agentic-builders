@@ -66,171 +66,121 @@ export default function Home() {
       {/* Manifesto Section */}
       <section
         id="manifesto"
-        className="py-20 px-6 bg-primary text-primary-foreground"
+        className="py-14 md:py-16 px-6 bg-primary text-primary-foreground"
       >
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-12">
-              The Manifesto
-            </h2>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <article className="relative mx-auto max-w-3xl rounded-sm border border-primary-foreground/25 bg-primary-foreground text-primary shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.04),transparent_45%),linear-gradient(to_bottom,rgba(0,0,0,0.02),transparent_32%)]" />
+            <div className="relative px-6 py-8 md:px-12 md:py-14">
+              <header className="mb-8 md:mb-10">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  The Manifesto
+                </h2>
+                <div className="mt-4 h-px w-20 bg-primary/25" />
+              </header>
 
-          <article className="space-y-8 leading-relaxed">
-            {/* Opening */}
-            <div className="space-y-6">
-              <p className="text-lg">
-                This started with a personal realization.
-              </p>
-              <p className="text-lg">
-                I used to avoid building things that felt like too much work but shallow in essence — sometimes I thought it was just laziness.
-              </p>
-              <p className="text-lg">
-                Recently, I realized the problem wasn't laziness — it was how we build.
-              </p>
-              <p className="text-lg">
-                AI has made this even more obvious.
-              </p>
-            </div>
+              <div className="mx-auto max-w-[64ch] font-serif text-[1.05rem] md:text-[1.1rem] leading-[1.72] md:leading-[1.78] tracking-[0.002em] text-primary/95">
+                <section className="space-y-3 md:space-y-3.5">
+                  <p className="first-letter:float-left first-letter:text-5xl first-letter:font-semibold first-letter:leading-[0.9] first-letter:mr-2 first-letter:mt-1">
+                    I used to avoid building things that felt like too much work but shallow in essence — sometimes I thought it was laziness. Recently, I realized the problem wasn’t laziness; it was <em>how we build</em>.
+                  </p>
+                  <p>
+                    AI has made this even more obvious. This is familiar — it’s what happened with the PC, what happened with the internet. Now, with AI, we can take things even further.
+                  </p>
+                  <p>
+                    But this isn’t just about AI. It’s about how we fundamentally think about systems — the bedrock of everything we create. Before AI, rigid systems gradually limited quality of life, forcing humans to be components rather than participants. AI accelerates awareness of these limits and demands a mindset for building systems that handle uncertainty while amplifying human potential.
+                  </p>
+                </section>
 
-            {/* The Pattern */}
-            <div className="space-y-6 pt-6">
-              <p className="text-lg">
-                This is familiar. This is what happened with the PC. This is what happened with the internet.
-              </p>
-              <p className="text-lg">
-                Now, with AI, we can take things even further.
-              </p>
-              <p className="text-lg">
-                But here's the interesting part: this isn't just about AI.
-              </p>
-              <p className="text-lg">
-                It's about how we fundamentally think about systems — the bedrock of what is to be built.
-              </p>
-            </div>
+                <section className="mt-7 md:mt-8 pt-5 md:pt-6 border-t border-primary/15 space-y-3 md:space-y-3.5">
+                  <p className="font-semibold">
+                    Putting Humans First
+                  </p>
+                  <p>
+                    Engineering — and the economy as a whole — is changing in real time. This shift demands one principle above all: putting humans first.
+                  </p>
+                  <p>
+                    When the computer mouse was invented, it existed because <strong>Douglas Engelbart</strong> cared about improving how humans interact with technology. Today, pioneers like <strong>Bennett Omalu</strong> show us that careful observation and a human-first mindset can change lives. Together, they remind us: putting humans at the center of every system isn’t optional — it’s essential.
+                  </p>
+                </section>
 
-            {/* Systems & Humans */}
-            <div className="space-y-6 pt-6">
-              <p className="text-lg">
-                Before AI, rigid systems gradually limited quality of life. They forced humans to be a component of the system rather than interacting with it.
-              </p>
-              <p className="text-lg">
-                AI is accelerating awareness of these limits, and it demands the right mindset for building systems that can handle uncertainty and amplify human potential.
-              </p>
-              <p className="text-lg">
-                As a result, engineering — and the economy as a whole — is changing in real time.
-              </p>
-              <p className="text-lg">
-                And this shift demands something important: putting humans first.
-              </p>
-            </div>
+                <section className="mt-7 md:mt-8 pt-5 md:pt-6 border-t border-primary/15 space-y-4">
+                  <p className="font-semibold">
+                    Imagine a World Where
+                  </p>
+                  <ul className="space-y-2.5 ml-2 md:ml-3">
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Patients can finally read their doctor’s handwriting</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Healthcare continues beyond hospital walls</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Education meets people where they are</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Our environment becomes cleaner</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Talent turns into real opportunity</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>People grow into better versions of themselves at their own pace</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>Human contribution is recognized and rewarded in new ways</span>
+                    </li>
+                  </ul>
+                  <p>
+                    That world won’t appear on its own. It will be built — by thinkers who are also builders.
+                  </p>
+                </section>
 
-            {/* The Parallels */}
-            <div className="space-y-6 pt-6">
-              <p className="text-lg">
-                When the computer mouse was invented, it existed because someone cared deeply about improving how humans interact with technology.
-              </p>
-              <p className="text-lg">
-                Today, we stand at a similar crossroads — this time with AI.
-              </p>
-              <p className="text-lg">
-                AI can do immense good.
-              </p>
-              <p className="text-lg">
-                It can also cause immense harm.
-              </p>
-              <p className="text-lg">
-                The difference will not be the technology itself, but the people who choose to act.
-              </p>
-            </div>
+                <section className="mt-7 md:mt-8 pt-5 md:pt-6 border-t border-primary/15 space-y-3 md:space-y-3.5">
+                  <p className="font-semibold">
+                    The Agentic Era
+                  </p>
+                  <p>
+                    We are living in an era shaped by words. They’ve always shaped ideas, but now, with AI, they literally design systems, guide intelligence, and influence outcomes. Programming is no longer limited to code — it includes how we think, communicate, and create.
+                  </p>
+                  <p>
+                    This community is not only for engineers. It is for anyone willing to think clearly and build intentionally.
+                  </p>
+                  <ul className="space-y-2.5 ml-2 md:ml-3">
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>If you’re lazy but obsessed with solving problems, this community is for you.</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>If you’re an engineer, this community is for you.</span>
+                    </li>
+                    <li className="flex items-start leading-[1.68] md:leading-[1.74]">
+                      <span className="mr-3 mt-1 text-primary/70">—</span>
+                      <span>If you see opportunities where others see obstacles, this community is for you.</span>
+                    </li>
+                  </ul>
+                </section>
 
-            {/* The Vision */}
-            <div className="space-y-8 pt-8 border-t border-primary-foreground/30">
-              <p className="text-lg font-semibold">
-                Imagine a world where:
-              </p>
-              <ul className="space-y-4 ml-6">
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>patients can finally understand their doctor's handwriting</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>healthcare continues beyond hospital walls</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>education meets people where they are</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>our environment becomes cleaner</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>talent turns into real opportunity</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>people grow into better versions of themselves at their own pace</span>
-                </li>
-                <li className="text-lg flex items-start">
-                  <span className="mr-4 mt-1">—</span>
-                  <span>human contribution is recognized and rewarded in new ways</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* The Call */}
-            <div className="space-y-6 pt-6">
-              <p className="text-lg">
-                That world won't appear on its own.
-              </p>
-              <p className="text-lg">
-                It will be built - by thinkers who are also builders.
-              </p>
-            </div>
-
-            {/* Words & Systems */}
-            <div className="space-y-6 pt-6 border-t border-primary-foreground/30">
-              <p className="text-lg">
-                We are now living in an era shaped by words. They have always shaped ideas, but now, with AI, they are literally designing systems, guiding intelligence, and influencing outcomes.
-              </p>
-              <p className="text-lg">
-                Programming is no longer limited to code — it includes how we think, communicate, and create.
-              </p>
-            </div>
-
-            {/* Inclusivity */}
-            <div className="space-y-6 pt-6">
-              <p className="text-lg">
-                This community is not only for engineers.
-              </p>
-              <p className="text-lg">
-                It is for anyone willing to think clearly and build intentionally.
-              </p>
-            </div>
-
-            {/* Who We're Looking For */}
-            <div className="space-y-6 pt-6 border-t border-primary-foreground/30">
-              <p className="text-lg">
-                If you're lazy but obsessed with solving problems, this community is for you.
-              </p>
-              <p className="text-lg">
-                If you're an engineer, this community is for you.
-              </p>
-              <p className="text-lg">
-                If you see opportunities where others see obstacles, this community is for you.
-              </p>
-            </div>
-
-            {/* The Call to Action */}
-            <div className="space-y-6 pt-8 border-t border-primary-foreground/30">
-              <p className="text-lg font-semibold">
-                We're gathering builders, thinkers, and future shapers.
-              </p>
-              <p className="text-lg">
-                If you've already joined, invite the people you want to help build the future with.
-              </p>
+                <section className="mt-7 md:mt-8 pt-5 md:pt-6 border-t border-primary/15 space-y-3 md:space-y-3.5">
+                  <p className="font-semibold">
+                    Join Us
+                  </p>
+                  <p>
+                    We’re gathering builders, thinkers, and future shapers across Africa who are putting humans first. Be part of what’s being built. Invite the people you want to build the future with.
+                  </p>
+                  <p className="pt-2 font-semibold">
+                    — Emmanuel Okanlawon
+                  </p>
+                </section>
+              </div>
             </div>
           </article>
         </div>
