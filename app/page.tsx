@@ -275,7 +275,24 @@ export default function Home() {
               </button>
             </div>
             <div className="p-4 md:p-6 flex-1 overflow-hidden">
-              <JoinForm onSuccess={handleJoinSuccess} />
+              {hasJoined ? (
+                <div className="h-full flex items-center justify-center text-center">
+                  <div className="max-w-lg space-y-4">
+                    <p className="text-xl font-semibold text-green-700">Submission received.</p>
+                    <p className="text-base text-muted-foreground">
+                      We review with care and move with intention.
+                    </p>
+                    <button
+                      onClick={() => setShowJoinForm(false)}
+                      className="px-6 py-3 bg-primary text-primary-foreground font-medium hover:opacity-85 transition-opacity"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <JoinForm onSuccess={handleJoinSuccess} />
+              )}
             </div>
           </div>
         </div>
