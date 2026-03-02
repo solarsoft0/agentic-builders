@@ -247,7 +247,7 @@ export default function Home() {
             <div className="space-y-4">
               <p className="text-lg font-semibold text-green-700">Submission received.</p>
               <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                We review with care and move with intention.
+                We’ll review with care and move with intention.
               </p>
             </div>
           ) : (
@@ -280,7 +280,7 @@ export default function Home() {
                   <div className="max-w-lg space-y-4">
                     <p className="text-xl font-semibold text-green-700">Submission received.</p>
                     <p className="text-base text-muted-foreground">
-                      We review with care and move with intention.
+                      We’ll review with care and move with intention.
                     </p>
                     <button
                       onClick={() => setShowJoinForm(false)}
